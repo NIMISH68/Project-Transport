@@ -36,7 +36,7 @@ export default function Drivers() {
     addDriver({ ...form, safetyScore: Number(form.safetyScore) })
     setForm(empty)
     setOpen(false)
-  
+  }
 
   const columns = [
     { key: 'name', label: 'Name', sortable: true },
