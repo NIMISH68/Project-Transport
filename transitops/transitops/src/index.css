@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-ink bg-parchment antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  html.dark body {
+    @apply bg-obsidian text-ink-dark;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    background: #A9863A55;
+  }
+}
+
+@layer utilities {
+  .paper-texture {
+    background-image:
+      repeating-linear-gradient(0deg, rgba(31,42,55,0.025) 0px, rgba(31,42,55,0.025) 1px, transparent 1px, transparent 32px);
+  }
+  html.dark .paper-texture {
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 32px);
+  }
+  .hairline {
+    @apply border-ledger-line;
+  }
+  html.dark .hairline {
+    @apply border-ledger-linedark;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  .scrollbar-ledger::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-ledger::-webkit-scrollbar-thumb {
+    background: #C79A4B66;
+    border-radius: 4px;
+  }
+  .scrollbar-ledger::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@keyframes seal-pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  70% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.animate-seal {
+  animation: seal-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
