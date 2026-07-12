@@ -10,7 +10,7 @@ const NAV = [
   { to: '/trips', label: 'Trip Manifest', icon: Route },
   { to: '/maintenance', label: 'Maintenance', icon: Wrench },
   { to: '/fuel-expenses', label: 'Fuel & Expenses', icon: Fuel },
-  { to: '/reports', label: 'Reports & Analytics', icon: BarChart3 }
+  { to: '/reports', label: 'Reports & Analytics', icon: BarChart3 },
 ]
 
 export default function Sidebar({ open, onNavigate }) {
