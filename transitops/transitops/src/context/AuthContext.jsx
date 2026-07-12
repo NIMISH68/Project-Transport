@@ -12,7 +12,7 @@ export function AuthProvider({ children }) {
       (u) => u.email.toLowerCase() === email.trim().toLowerCase() && u.password === password
     )
     if (!found) {
-      setError('Those credentials were not recognised. Please try again.')
+      setError('Credentials do not match. Please try again.')
       return false
     }
     setError(null)
